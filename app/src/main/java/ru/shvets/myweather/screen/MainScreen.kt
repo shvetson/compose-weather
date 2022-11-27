@@ -125,7 +125,7 @@ fun MainCard() {
 
 @OptIn(ExperimentalPagerApi::class)
 @Composable
-fun TabLayout() {
+fun TabLayout(list: List<Part>) {
     val tabList = listOf<String>("PARTS", "DAYS")
 
     val pagerState = rememberPagerState()
@@ -172,7 +172,7 @@ fun TabLayout() {
 
                 when(index){
                     0 -> {
-                        itemsIndexed(listOf<Part>()) { _, item ->
+                        itemsIndexed(list) { _, item ->
                             ListItems(item = item)
                         }
                     }
